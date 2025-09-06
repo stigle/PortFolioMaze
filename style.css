@@ -1,0 +1,204 @@
+/* ===== Global ===== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body.light {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* ===== Canvas particules ===== */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* ===== Menu flottant ===== */
+#menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+#menu li {
+    margin: 0 15px;
+}
+
+#menu a, #menu button {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+#menu a:hover, #menu button:hover {
+    color: #4CAF50;
+}
+
+body {
+    padding-top: 60px;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* ===== Compétences ===== */
+.skill {
+    margin: 20px 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background-color: #333;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* ===== Projets ===== */
+.project-card {
+    display: inline-block;
+    background-color: #1e1e1e;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px #4CAF50;
+}
+
+/* ===== Formulaire contact ===== */
+#contact-form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+#contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #2196F3;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1e1e1e;
+}
+
+/* ===== Animations ===== */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    .project-card { width: 80%; margin: 10px auto; }
+}
